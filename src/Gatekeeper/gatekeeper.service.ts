@@ -1,7 +1,6 @@
 import { OnModuleInit, Injectable } from '@nestjs/common';
 import { Client, ClientGrpc } from '@nestjs/microservices';
 import { grpcClientOptions } from 'src/grpc.client.options';
-import { Gatekeeper } from './types';
 
 @Injectable()
 export class GatekeeperClientService implements OnModuleInit {

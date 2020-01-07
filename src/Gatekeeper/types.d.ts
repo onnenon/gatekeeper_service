@@ -1,5 +1,3 @@
-import { Observable } from 'rxjs';
-
 declare namespace Gatekeeper {
   enum BoardStatusEnum {
     OUT = 0,
@@ -18,6 +16,6 @@ declare namespace Gatekeeper {
   }
 
   interface GatekeeperService {
-    updateBoard(data: BoardUpdateRequest): Observable<any>;
+    updateBoard(data: BoardUpdateRequest): any;
   }
 }
