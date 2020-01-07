@@ -12,7 +12,7 @@ export class GatekeeperClientService implements OnModuleInit {
   onModuleInit() {
     this.gatekeeperService = this.client.getService<
       Gatekeeper.GatekeeperService
-    >('GatekeeperService');
+    >('Gatekeeper');
   }
 
   updateBoard(updates: Gatekeeper.BoardUpdate[]) {

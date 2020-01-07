@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { GatekeeperModule } from './Gatekeeper/gatekeeper.module';
+import { GatekeeperClientService } from './gatekeeper/gatekeeper.service';
 
 @Module({
-  imports: [GatekeeperModule],
+  providers: [GatekeeperClientService],
   controllers: [AppController],
 })
 export class AppModule {}

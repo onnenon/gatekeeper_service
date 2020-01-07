@@ -1,5 +1,5 @@
 import { Controller, Get, Post } from '@nestjs/common';
-import { GatekeeperClientService } from './Gatekeeper/gatekeeper.service';
+import { GatekeeperClientService } from './gatekeeper/gatekeeper.service';
 
 @Controller()
 export class AppController {

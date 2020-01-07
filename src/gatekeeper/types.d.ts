@@ -1,3 +1,5 @@
+type Observable<T> = import('rxjs/internal/Observable').Observable<T>;
+
 declare namespace Gatekeeper {
   enum BoardStatusEnum {
     OUT = 0,
@@ -16,6 +18,6 @@ declare namespace Gatekeeper {
   }
 
   interface GatekeeperService {
-    updateBoard(data: BoardUpdateRequest): any;
+    updateBoard(data: BoardUpdateRequest): Observable<any>;
   }
 }
