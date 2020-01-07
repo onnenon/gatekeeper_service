@@ -16,6 +16,10 @@ export interface BoardUpdateRequest {
   updates: BoardUpdate[];
 }
 
+export interface BoardUpdateResponse {
+  success: boolean;
+}
+
 export interface GatekeeperService {
-  updateBoard(data: BoardUpdateRequest): Observable<any>;
+  updateBoard(data: BoardUpdateRequest): BoardUpdateResponse;
 }

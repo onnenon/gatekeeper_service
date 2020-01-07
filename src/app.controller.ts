@@ -17,8 +17,8 @@ export class AppController {
       { position: 1, status: BoardStatusEnum.ERROR },
     ];
 
-    this.gatekeeperClientService.updateBoard(updates);
+    const response = this.gatekeeperClientService.updateBoard(updates);
 
-    return 'Board Updated';
+    return `Board update success: ${response.success}`;
   }
 }

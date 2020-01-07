@@ -2,6 +2,10 @@ syntax = "proto3";
 
 package gatekeeper;
 
+service GatekeeperService {
+  rpc updateBoard(BoardUpdateRequest) returns (BoardUpdateResponse);
+}
+
 enum BoardStatusEnum {
   OUT = 0;
   IN = 1;
@@ -16,8 +20,4 @@ message BoardUpdate {
 
 message BoardUpdateRequest { repeated BoardUpdate updates = 1; }
 
-message BoardUpdateResponse {}
-
-service GatekeeperService {
-  rpc updateBoard(BoardUpdateRequest) returns (BoardUpdateResponse);
-}
+message BoardUpdateResponse { bool success = 1; }
