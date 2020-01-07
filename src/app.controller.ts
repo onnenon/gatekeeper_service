@@ -19,6 +19,6 @@ export class AppController {
 
     const response = this.gatekeeperClientService.updateBoard(updates);
 
-    return `Board update success: ${response.success}`;
+    return `Board update success: ${response}`;
   }
 }

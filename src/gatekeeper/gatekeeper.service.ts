@@ -17,7 +17,7 @@ export class GatekeeperClientService implements OnModuleInit {
     console.log('GatekeeerService', this.client);
   }
 
-  updateBoard(updates: BoardUpdate[]) {
-    return this.gatekeeperService.updateBoard({ updates });
+  updateBoard(updates: BoardUpdate[]): boolean {
+    return this.gatekeeperService.updateBoard({ updates }).requestStatus;
   }
 }
