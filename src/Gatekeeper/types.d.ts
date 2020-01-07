@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 
-export namespace Gatekeeper {
-  enum StatusEnum {
+declare namespace Gatekeeper {
+  enum BoardStatusEnum {
     OUT = 0,
     IN = 1,
     ERROR = 2,
@@ -10,7 +10,7 @@ export namespace Gatekeeper {
 
   interface BoardUpdate {
     position: number;
-    status: StatusEnum;
+    status: BoardStatusEnum;
   }
 
   interface BoardUpdateRequest {

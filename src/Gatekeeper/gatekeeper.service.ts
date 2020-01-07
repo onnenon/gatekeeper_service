@@ -4,7 +4,7 @@ import { grpcClientOptions } from 'src/grpc.client.options';
 import { Gatekeeper } from './types';
 
 @Injectable()
-export class GatekeeperService implements OnModuleInit {
+export class GatekeeperClientService implements OnModuleInit {
   @Client(grpcClientOptions)
   private readonly client: ClientGrpc;
 

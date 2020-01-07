@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { GatekeeperModule } from './gatekeeper/gatekeeper.module';
+import { GatekeeperModule } from './Gatekeeper/gatekeeper.module';
 
 @Module({
   imports: [GatekeeperModule],
