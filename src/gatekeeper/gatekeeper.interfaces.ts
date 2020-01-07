@@ -17,7 +17,7 @@ export interface BoardUpdateRequest {
 }
 
 export interface BoardUpdateResponse {
-  success: boolean;
+  requestStatus: boolean;
 }
 
 export interface GatekeeperService {
