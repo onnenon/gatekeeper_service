@@ -1,5 +1,9 @@
 import { Controller, Get, Post } from '@nestjs/common';
 import { GatekeeperClientService } from './gatekeeper/gatekeeper.service';
+import {
+  BoardUpdate,
+  BoardStatusEnum,
+} from './gatekeeper/gatekeeper.interfaces';
 
 @Controller()
 export class AppController {
@@ -9,8 +13,8 @@ export class AppController {
 
   @Get()
   getHello(): string {
-    const updates: Gatekeeper.BoardUpdate[] = [
-      { position: 1, status: Gatekeeper.BoardStatusEnum.ERROR },
+    const updates: BoardUpdate[] = [
+      { position: 1, status: BoardStatusEnum.ERROR },
     ];
 
     this.gatekeeperClientService.updateBoard(updates);
