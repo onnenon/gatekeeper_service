@@ -12,13 +12,13 @@ export class AppController {
   ) {}
 
   @Get()
-  getHello(): string {
+  async getHello(): Promise<string> {
     const updates: BoardUpdate[] = [
       { position: 1, status: BoardStatusEnum.ERROR },
     ];
 
-    const response = this.gatekeeperClientService.updateBoard(updates);
+    const response = await this.gatekeeperClientService.updateBoard(updates);
 
-    return `Board update success: ${response}`;
+    return `Board update success: ${response.requestStatus}`;
   }
 }

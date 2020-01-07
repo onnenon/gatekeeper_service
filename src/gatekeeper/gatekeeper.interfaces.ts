@@ -21,5 +21,5 @@ export interface BoardUpdateResponse {
 }
 
 export interface GatekeeperService {
-  updateBoard(data: BoardUpdateRequest): BoardUpdateResponse;
+  updateBoard(data: BoardUpdateRequest): Observable<BoardUpdateResponse>;
 }
