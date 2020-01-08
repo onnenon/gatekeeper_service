@@ -20,6 +20,6 @@ export interface BoardUpdateResponse {
   requestStatus: boolean;
 }
 
-export interface GatekeeperService {
+export interface WhiteboardService {
   updateBoard(data: BoardUpdateRequest): Observable<BoardUpdateResponse>;
 }

@@ -1,23 +1,21 @@
 import { Controller, Get, Post } from '@nestjs/common';
-import { GatekeeperClientService } from './gatekeeper/gatekeeper.service';
+import { WhiteboardClient } from './Whiteboard/whiteboard.service';
 import {
   BoardUpdate,
   BoardStatusEnum,
-} from './gatekeeper/gatekeeper.interfaces';
+} from './Whiteboard/whiteboard.interfaces';
 
 @Controller()
 export class AppController {
-  constructor(
-    private readonly gatekeeperClientService: GatekeeperClientService,
-  ) {}
+  constructor(private readonly whiteboard: WhiteboardClient) {}
 
-  @Get()
-  async getHello(): Promise<string> {
+  @Post()
+  async getBoardPositions(): Promise<string> {
     const updates: BoardUpdate[] = [
       { position: 1, status: BoardStatusEnum.ERROR },
     ];
 
-    const response = await this.gatekeeperClientService.updateBoard(updates);
+    const response = await this.whiteboard.updateBoard(updates);
 
     return `Board update success: ${response.requestStatus}`;
   }

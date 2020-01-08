@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { GatekeeperClientService } from './gatekeeper/gatekeeper.service';
+import { WhiteboardClient } from './Whiteboard/whiteboard.service';
 
 @Module({
-  providers: [GatekeeperClientService],
+  providers: [WhiteboardClient],
   controllers: [AppController],
 })
 export class AppModule {}
