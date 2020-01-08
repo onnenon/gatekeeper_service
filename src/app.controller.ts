@@ -12,7 +12,7 @@ export class AppController {
     @Res() res: Response,
     @Body() updateDto: BoardUpdateRequest,
   ): Promise<Response> {
-    const response = await this.whiteboard.updateBoard(updateDto.updates);
+    await this.whiteboard.updateBoard(updateDto.updates);
     return res
       .status(HttpStatus.OK)
       .send(JSON.parse('{"success": "updated successfully"}'));
