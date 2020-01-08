@@ -1,22 +1,20 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Post, Body, Res, HttpStatus } from '@nestjs/common';
 import { WhiteboardClient } from './Whiteboard/whiteboard.service';
-import {
-  BoardUpdate,
-  BoardStatusEnum,
-} from './Whiteboard/whiteboard.interfaces';
+import { Response } from 'express';
+import { BoardUpdateRequest } from './Whiteboard/whiteboard.interfaces';
 
 @Controller()
 export class AppController {
   constructor(private readonly whiteboard: WhiteboardClient) {}
 
   @Post()
-  async getBoardPositions(): Promise<string> {
-    const updates: BoardUpdate[] = [
-      { position: 1, status: BoardStatusEnum.ERROR },
-    ];
-
-    const response = await this.whiteboard.updateBoard(updates);
-
-    return `Board update success: ${response.requestStatus}`;
+  async updateBoardPositions(
+    @Res() res: Response,
+    @Body() updateDto: BoardUpdateRequest,
+  ): Promise<Response> {
+    const response = await this.whiteboard.updateBoard(updateDto.updates);
+    return res
+      .status(HttpStatus.OK)
+      .send(JSON.parse('{"success": "updated successfully"}'));
   }
 }

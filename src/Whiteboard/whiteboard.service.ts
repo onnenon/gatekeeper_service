@@ -7,7 +7,6 @@ import {
   BoardUpdateResponse,
 } from './whiteboard.interfaces';
 
-@Injectable()
 export class WhiteboardClient implements OnModuleInit {
   @Client(getWhiteboardClientOptions('localhost:8990'))
   private readonly client: ClientGrpc;

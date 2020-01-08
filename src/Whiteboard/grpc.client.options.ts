@@ -1,7 +1,7 @@
 import { ClientOptions, Transport } from '@nestjs/microservices';
 import { join } from 'path';
 
-export const getWhiteboardClientOptions = (url: string): ClientOptions => {
+export function getWhiteboardClientOptions(url: string): ClientOptions {
   return {
     transport: Transport.GRPC,
     options: {
@@ -10,4 +10,4 @@ export const getWhiteboardClientOptions = (url: string): ClientOptions => {
       protoPath: join(__dirname, './whiteboard.proto'),
     },
   };
-};
+}

@@ -16,9 +16,7 @@ export interface BoardUpdateRequest {
   updates: BoardUpdate[];
 }
 
-export interface BoardUpdateResponse {
-  requestStatus: boolean;
-}
+export interface BoardUpdateResponse {}
 
 export interface WhiteboardService {
   updateBoard(data: BoardUpdateRequest): Observable<BoardUpdateResponse>;
