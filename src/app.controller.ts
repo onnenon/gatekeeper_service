@@ -1,7 +1,7 @@
 import { Controller, Post, Body, Res, HttpStatus } from '@nestjs/common';
-import { WhiteboardClient } from './Whiteboard/whiteboard.service';
+import { WhiteboardClient } from './whiteboard/whiteboard.service';
 import { Response } from 'express';
-import { BoardUpdateRequest } from './Whiteboard/whiteboard.interfaces';
+import { BoardUpdateRequest } from './whiteboard/whiteboard.interfaces';
 
 @Controller()
 export class AppController {

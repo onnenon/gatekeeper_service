@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { WhiteboardClient } from './Whiteboard/whiteboard.service';
+import { WhiteboardClient } from './whiteboard/whiteboard.service';
 
 @Module({
   providers: [WhiteboardClient],

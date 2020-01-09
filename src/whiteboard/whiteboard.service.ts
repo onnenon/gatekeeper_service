@@ -1,6 +1,6 @@
 import { OnModuleInit, Injectable, Logger, Get } from '@nestjs/common';
 import { Client, ClientGrpc } from '@nestjs/microservices';
-import { getWhiteboardClientOptions } from 'src/Whiteboard/grpc.client.options';
+import { getWhiteboardClientOptions } from 'src/whiteboard/grpc.client.options';
 import {
   BoardUpdate,
   WhiteboardService,
