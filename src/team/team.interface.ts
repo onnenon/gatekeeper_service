@@ -1,10 +1,25 @@
 import { UserDto } from 'src/user/user.interface';
 
-export class TeamDto {
+export interface TeamDto {
+  id: number;
   name: string;
-  status: number;
+  status: TeamStatus;
   building: string;
-  channel: string;
-  boardPosition: number;
+  location?: string;
+  channel?: string;
+  boardPosition?: number;
   users: UserDto[];
+}
+
+export interface CreateTeamDto {
+  name: string;
+  location?: string;
+  building?: string;
+  channel?: string;
+  boardPosition?: number;
+}
+
+export enum TeamStatus {
+  OUT,
+  IN,
 }

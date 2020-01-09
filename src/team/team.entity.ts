@@ -4,25 +4,27 @@ import {
   ManyToMany,
   JoinTable,
   PrimaryGeneratedColumn,
+  Unique,
 } from 'typeorm';
 import { User } from 'src/user/user.entity';
+import { TeamStatus } from './team.interface';
 
 @Entity('team')
 export class Team {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ unique: true, nullable: false })
   name: string;
 
-  @Column()
-  status: number;
+  @Column({ default: TeamStatus.OUT })
+  status: TeamStatus;
+
+  @Column({ default: 'Vault' })
+  building: string;
 
   @Column()
   location: string;
-
-  @Column()
-  building: string;
 
   @Column()
   channel: string;
@@ -30,7 +32,11 @@ export class Team {
   @Column()
   board_position: number;
 
-  @ManyToMany(type => User)
+  @ManyToMany(
+    type => User,
+    user => user.teams,
+    { cascade: true },
+  )
   @JoinTable()
   users: User[];
 }
